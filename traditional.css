@@ -1,0 +1,51 @@
+/* The switch button, shown in both looks */
+.switch { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 6; cursor: pointer;
+  font: 600 13px Mulish, system-ui, sans-serif; letter-spacing: .08em; padding: 13px 22px; border-radius: 999px;
+  background: var(--ivory); color: var(--night); border: 2px solid var(--gold); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); }
+.switch:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+footer { padding-bottom: 100px; }
+body:not(.traditional) .trad-only, body.traditional .west-only { display: none !important; }
+
+/* Traditional South Indian invitation card: gold pillars, marigold and mango leaf toran, sky and temple colours */
+body.traditional { --night: #5a0d12; --plum: #7a1218; --wine: #8f1d22; --gold: #d99a1e; --gold-deep: #8a5a08; --ivory: #fff4d6; --ink: #2f3a24; }
+body.traditional { background: var(--night); }
+body.traditional nav { background: rgba(90, 13, 18, .95); }
+
+.invite-card { position: relative; max-width: 600px; margin: 0 auto; padding-top: 64px; overflow: hidden; text-align: center;
+  color: var(--ink); background: linear-gradient(#fdf3d8 0%, #e4f0ee 28%, #b9d6ea 52%, #6f9fd6 100%); }
+body.traditional .invite-card { margin-top: 64px; padding-top: 0; }
+
+/* gold pillars down both sides */
+.invite-card::before, .invite-card::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; z-index: 2;
+  background:
+    repeating-linear-gradient(transparent 0 150px, #7a4b0a 150px 154px, #f7d57a 154px 166px, #7a4b0a 166px 170px, transparent 170px 180px),
+    linear-gradient(90deg, #8a5a08, #f9dc86 35%, #d99a1e 60%, #8a5a08); }
+.invite-card::before { left: 0; }
+.invite-card::after { right: 0; }
+
+.toran { position: relative; z-index: 3; height: 84px; border-top: 10px solid #b9801a;
+  background-repeat: repeat-x; background-size: 56px 74px; background-position: center top;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='74'%3E%3Cpath d='M14 6C28 24 24 46 14 64C4 46 0 24 14 6Z' fill='%232f6b2a'/%3E%3Cpath d='M42 6C54 20 52 36 42 50C32 36 30 20 42 6Z' fill='%234b8b32'/%3E%3Cpath d='M14 10V58' stroke='%239cc46a' stroke-width='1.2'/%3E%3Ccircle cx='0' cy='7' r='10' fill='%23f28c0f'/%3E%3Ccircle cx='28' cy='7' r='10' fill='%23ffbf1a'/%3E%3Ccircle cx='56' cy='7' r='10' fill='%23f28c0f'/%3E%3Ccircle cx='0' cy='7' r='4' fill='%23ffd23f'/%3E%3Ccircle cx='28' cy='7' r='4' fill='%23f28c0f'/%3E%3Ccircle cx='56' cy='7' r='4' fill='%23ffd23f'/%3E%3Ccircle cx='28' cy='23' r='6' fill='%23f28c0f'/%3E%3Ccircle cx='28' cy='35' r='6' fill='%23ffbf1a'/%3E%3Ccircle cx='28' cy='47' r='6' fill='%23f28c0f'/%3E%3C/svg%3E"); }
+
+.invite-words { padding: 12px 34px 0; font: 600 19px/1.45 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
+.invite-words .blessing { font: 400 38px/1.2 "Great Vibes", cursive; color: var(--wine); margin-bottom: 8px; }
+.invite-words .request { font-style: italic; }
+.invite-words h1, .invite-words h2 { font: 400 clamp(56px, 13vw, 78px)/1.15 "Great Vibes", cursive; color: var(--wine); margin: 14px 0 2px; }
+.invite-words .amp { font-size: 30px; margin-top: 10px; }
+.invite-words h2 { margin-top: 0; }
+.invite-words .datebar { margin-top: 24px; }
+.datebar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 380px; margin: 0 auto; font-size: 23px; }
+.datebar strong { font-size: 52px; line-height: 1.1; color: var(--wine); padding: 0 18px; border-inline: 2px solid var(--gold-deep); }
+.datebar sup { font-size: .4em; }
+.year { font-size: 21px; letter-spacing: .2em; }
+.invite-words h3 { font-size: 27px; color: var(--wine); margin: 18px 0 0; }
+.invite-words .button { margin-top: 24px; font-family: Mulish, system-ui, sans-serif; }
+body.traditional .button { background: var(--wine); color: var(--ivory); }
+
+/* the photo's own sky fades into the card */
+.invite-photo { width: 100%; margin-top: 12px; display: block;
+  -webkit-mask-image: linear-gradient(transparent, #000 8%); mask-image: linear-gradient(transparent, #000 8%); }
+
+body.traditional .rsvp .button { background: var(--gold); color: #3d1a10; }
+body.traditional .events { --ink: #3d1a10; }
+body.traditional .card { border: 4px double var(--gold); }

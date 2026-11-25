@@ -21,3 +21,24 @@ if (RSVP_FORM_URL) {
   button.hidden = false;
   document.getElementById("rsvp-note").textContent = "Please let us know if you can come.";
 }
+
+// Switch between the western look and the traditional invitation.
+// Adding ?invite=traditional to the link opens the traditional one directly.
+const themeSwitch = document.getElementById("theme-switch");
+
+function showTraditional(on) {
+  document.body.classList.toggle("traditional", on);
+  themeSwitch.textContent = on ? "Western look" : "Traditional invite";
+}
+
+showTraditional(new URLSearchParams(location.search).get("invite") === "traditional");
+themeSwitch.addEventListener("click", () => {
+  const on = !document.body.classList.contains("traditional");
+  showTraditional(on);
+  const url = new URL(location.href);
+  if (on) url.searchParams.set("invite", "traditional");
+  else url.searchParams.delete("invite");
+  url.hash = "";
+  history.replaceState(null, "", url);
+  window.scrollTo({ top: 0, behavior: "instant" });
+});
