@@ -39,10 +39,9 @@ body.traditional .invite-card { margin-top: 64px; }
 .invite-words .button { margin-top: 18px; font-family: Mulish, system-ui, sans-serif; }
 body.traditional .button { background: var(--wine); color: #fff6e6; }
 
-/* temple in the middle, lamp and lotus at the corners */
-.scene { position: relative; height: 96cqw; margin-top: 8px; }
+/* lamp and lotus at the bottom corners */
+.scene { position: relative; height: 34cqw; margin-top: 4px; }
 .scene img { position: absolute; pointer-events: none; }
-.scene .temple { width: 70cqw; left: 15cqw; bottom: 0; }
 .scene .foot { width: 27cqw; bottom: -2px; }
 .scene .foot.left { left: 0; }
 .scene .foot.right { right: 0; }
