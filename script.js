@@ -42,3 +42,7 @@ themeSwitch.addEventListener("click", () => {
   history.replaceState(null, "", url);
   window.scrollTo({ top: 0, behavior: "instant" });
 });
+
+// The invitation starts closed; tapping the cover swings it open.
+const cover = document.getElementById("cover");
+cover.addEventListener("click", () => cover.parentElement.classList.add("open"));

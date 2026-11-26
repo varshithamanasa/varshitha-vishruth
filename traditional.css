@@ -45,3 +45,34 @@ body.traditional .rsvp .eyebrow { color: var(--gold); }
 body.traditional .rsvp h2 { color: #ffe8ac; }
 body.traditional .rsvp .button { background: var(--wine); color: #fff3cd; }
 body.traditional footer .script { color: #ffe8ac; }
+
+/* Opening card: a closed cover in two halves that swing open in 3D when tapped */
+.invite-card { overflow: hidden; overflow: clip; }
+.book { position: relative; perspective: 1400px; container-type: inline-size; }
+.cover { position: absolute; inset: 0; z-index: 2; border: 0; padding: 0; background: none; cursor: pointer; transform-style: preserve-3d; font: inherit; color: #fff3cd; }
+.cover:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.door { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; transition: transform 1.6s cubic-bezier(.6, .05, .25, 1), filter 1.6s; }
+.door.left { left: 0; transform-origin: left center; box-shadow: inset -10px 0 18px -10px rgba(0, 0, 0, .55); }
+.door.right { right: 0; transform-origin: right center; box-shadow: inset 10px 0 18px -10px rgba(0, 0, 0, .55); }
+/* each half shows its own side of one shared cover design */
+.face { position: absolute; top: 0; bottom: 0; width: 200%; display: flex; flex-direction: column; align-items: center; padding-top: 36cqw;
+  background: url("images/sage.jpg") center / cover; text-shadow: 0 1px 3px rgba(24, 36, 18, .75); }
+.door.left .face { left: 0; }
+.door.right .face { right: 0; }
+.face::before { content: ""; position: absolute; inset: 4cqw; border: 2px solid var(--gold); outline: 1px solid var(--gold); outline-offset: -2.2cqw; }
+.face > span { position: relative; display: block; }
+.face .cover-lotus { width: 46cqw; aspect-ratio: 350 / 270; background: url("images/cover-lotus.jpg") center / cover;
+  -webkit-mask-image: radial-gradient(closest-side, #000 78%, transparent 100%); mask-image: radial-gradient(closest-side, #000 78%, transparent 100%); }
+.cover-initials { font: 400 20cqw/1.3 "Great Vibes", cursive; color: #ffe8ac; margin-top: 4cqw; white-space: nowrap; }
+.cover-title { font: 600 5cqw "Cormorant Garamond", serif; text-transform: uppercase; letter-spacing: .22em; }
+.face .cover-hint { margin-top: 12cqw; padding: 2.4cqw 6cqw; border-radius: 999px; background: var(--wine); border: 1px solid var(--gold);
+  font: 600 3.6cqw Mulish, system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; text-shadow: none; animation: breathe 2s ease-in-out infinite; }
+@keyframes breathe { 50% { transform: scale(1.07); } }
+.book.open .cover { pointer-events: none; visibility: hidden; transition: visibility 0s 1.7s; }
+.book.open .door.left { transform: rotateY(-108deg); filter: brightness(.7); }
+.book.open .door.right { transform: rotateY(108deg); filter: brightness(.7); }
+@media (prefers-reduced-motion: reduce) {
+  .door { transition: opacity .3s; }
+  .book.open .door { transform: none; opacity: 0; }
+  .face .cover-hint { animation: none; }
+}
