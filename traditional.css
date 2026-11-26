@@ -10,22 +10,22 @@ body:not(.traditional) .trad-only, body.traditional .west-only { display: none !
 body.traditional { --night: #333d30; --plum: #46533f; --wine: #7d2e34; --gold: #e3c27a; --gold-deep: #8a661f; --ivory: #f7f0dc; --ink: #33291f; background: var(--night); }
 body.traditional nav { background: rgba(51, 61, 48, .96); }
 
-.invite-card { max-width: 600px; margin: 0 auto; padding: 64px 0 36px; text-align: center; }
-.template { position: relative; aspect-ratio: 1125 / 2000; container-type: inline-size; background: url("images/invite-template.jpg") center / cover;
+.invite-card { max-width: 600px; margin: 0 auto; padding: 78px 14px 36px; text-align: center; }
+.template { position: relative; aspect-ratio: 1031 / 1830; container-type: inline-size; background: url("images/invite-art.jpg") center / cover; box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
   color: #fff8e4; text-shadow: 0 1px 3px rgba(24, 36, 18, .75); font-variant-numeric: lining-nums; }
 
 /* top line sits between the two corner lotuses */
-.invite-top { position: absolute; top: 13cqw; left: 20cqw; width: 60cqw; white-space: nowrap; }
-.om { font: 500 4.8cqw/1.5 "Noto Serif Devanagari", serif; color: #f6dfa2; }
+.invite-top { position: absolute; top: 6cqw; left: 18.5cqw; width: 65cqw; white-space: nowrap; }
+.om { font: 500 5.18cqw/1.5 "Noto Serif Devanagari", serif; color: #f6dfa2; }
 
 /* the rest keeps to the open side, clear of the stems, elephant and lower lotuses */
-.invite-words { position: absolute; top: 30cqw; height: 107cqw; left: 36cqw; right: 6cqw; display: flex; flex-direction: column; justify-content: center; gap: 3.2cqw;
-  font: 600 4cqw/1.32 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
+.invite-words { position: absolute; top: 24.5cqw; height: 117cqw; left: 36cqw; right: 3cqw; display: flex; flex-direction: column; justify-content: center; gap: 3.46cqw;
+  font: 600 4.32cqw/1.32 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
 .request { font-style: italic; padding: 0 2cqw; }
-.invite-words h1, .invite-words h2 { font: 400 12cqw/1.15 "Great Vibes", cursive; color: #ffe8ac; margin: 0; white-space: nowrap; }
-.invite-words .amp { font: 400 5.5cqw/.9 "Great Vibes", cursive; color: #ffe8ac; }
-.date { text-transform: uppercase; letter-spacing: .18em; font-size: 3.5cqw; margin-top: 3cqw; }
-.date strong { display: block; text-transform: none; letter-spacing: 0; font-size: 5.8cqw; color: #ffe8ac; font-variant-numeric: lining-nums; }
+.invite-words h1, .invite-words h2 { font: 400 12.96cqw/1.15 "Great Vibes", cursive; color: #ffe8ac; margin: 0; white-space: nowrap; }
+.invite-words .amp { font: 400 5.94cqw/.9 "Great Vibes", cursive; color: #ffe8ac; }
+.date { text-transform: uppercase; letter-spacing: .18em; font-size: 3.78cqw; margin-top: 3.24cqw; }
+.date strong { display: block; text-transform: none; letter-spacing: 0; font-size: 6.26cqw; color: #ffe8ac; font-variant-numeric: lining-nums; }
 
 .invite-card .button { margin-top: 28px; }
 body.traditional .button { background: var(--wine); color: #fff3cd; border: 1px solid var(--gold); }
