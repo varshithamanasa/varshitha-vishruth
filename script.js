@@ -34,3 +34,21 @@ document.querySelectorAll(".cover").forEach((cover) => {
 themeSwitch.addEventListener("click", () => {
   document.querySelectorAll(".book").forEach((book) => book.classList.remove("open"));
 });
+
+// Countdown to the muhurtham: February 11, 2027, 11:00 AM Central Standard Time
+const muhurtham = new Date("2027-02-11T11:00:00-06:00");
+
+function updateCountdown() {
+  const left = muhurtham - Date.now();
+  if (left <= 0) {
+    document.getElementById("countdown").hidden = true;
+    return;
+  }
+  const secs = Math.floor(left / 1000);
+  document.getElementById("cd-days").textContent = Math.floor(secs / 86400);
+  document.getElementById("cd-hours").textContent = Math.floor(secs / 3600) % 24;
+  document.getElementById("cd-mins").textContent = Math.floor(secs / 60) % 60;
+  document.getElementById("cd-secs").textContent = secs % 60;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);

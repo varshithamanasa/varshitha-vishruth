@@ -95,3 +95,11 @@ body:not(.traditional) .invite-card .button { background: var(--gold); color: va
 .face .cover-star { font-size: 18cqw; line-height: 1.4; color: var(--gold); }
 .west-only .face .cover-hint { background: var(--gold); color: #1d0d15; }
 @media (prefers-reduced-motion: reduce) { .reveal { transform: none; transition: opacity .3s; } .book.open .reveal { transition-delay: 0s; } }
+
+/* Countdown under the main invitation */
+.trad-only .countdown { display: flex; justify-content: center; max-width: 420px; margin: 26px auto 0; padding: 12px 0; color: #fff3cd;
+  border-block: 1px solid rgba(227, 194, 122, .55); }
+.trad-only .countdown div { flex: 1; min-width: 0; }
+.trad-only .countdown div + div { border-left: 1px solid rgba(227, 194, 122, .4); }
+.trad-only .countdown strong { color: #ffe8ac; font-variant-numeric: lining-nums tabular-nums; }
+.trad-only .countdown span { font-size: 10px; letter-spacing: .16em; }
