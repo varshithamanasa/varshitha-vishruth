@@ -27,13 +27,42 @@ themeSwitch.addEventListener("click", () => {
 });
 
 // Each invitation starts closed; tapping its cover swings it open.
+// Until then the page cannot be scrolled.
+function lockScrolling(locked) {
+  document.documentElement.classList.toggle("locked", locked);
+  if (locked) window.scrollTo({ top: 0, behavior: "instant" });
+}
+const isLocked = () => document.documentElement.classList.contains("locked");
+
+history.scrollRestoration = "manual";
+// A link ending in #events or #rsvp would jump past the closed card, so drop that part.
+if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+lockScrolling(true);
+// Catch any other jump (late anchor scrolling, keyboard focus) while still closed.
+function holdAtTop() {
+  if (isLocked() && window.scrollY > 0) window.scrollTo({ top: 0, behavior: "instant" });
+}
+window.addEventListener("scroll", holdAtTop, { passive: true });
+window.addEventListener("load", holdAtTop);
+
 document.querySelectorAll(".cover").forEach((cover) => {
-  cover.addEventListener("click", () => cover.parentElement.classList.add("open"));
+  cover.addEventListener("click", () => {
+    cover.parentElement.classList.add("open");
+    lockScrolling(false);
+  });
 });
 // Switching looks closes the cards again, so the opening can be seen each time.
 themeSwitch.addEventListener("click", () => {
   document.querySelectorAll(".book").forEach((book) => book.classList.remove("open"));
+  lockScrolling(true);
 });
+// The menu links and one-finger swipes must not move a locked page either.
+document.querySelectorAll("nav a").forEach((link) => {
+  link.addEventListener("click", (event) => { if (isLocked()) event.preventDefault(); });
+});
+document.addEventListener("touchmove", (event) => {
+  if (isLocked() && event.touches.length === 1) event.preventDefault();
+}, { passive: false });
 
 // Countdown to the muhurtham: February 11, 2027, 11:00 AM Central Standard Time
 const muhurtham = new Date("2027-02-11T11:00:00-06:00");

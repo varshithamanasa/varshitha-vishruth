@@ -103,3 +103,14 @@ body:not(.traditional) .invite-card .button { background: var(--gold); color: va
 .trad-only .countdown div + div { border-left: 1px solid rgba(227, 194, 122, .4); }
 .trad-only .countdown strong { color: #ffe8ac; font-variant-numeric: lining-nums tabular-nums; }
 .trad-only .countdown span { font-size: 10px; letter-spacing: .16em; }
+
+/* Page stays put until the invitation is opened */
+html.locked, html.locked body { overflow: hidden; overscroll-behavior: none; }
+/* size the cover's contents by whichever is smaller, card width or screen height,
+   so "Tap to open" is always on screen while scrolling is off */
+.face { --u: min(1cqw, .6vh); padding-top: calc(var(--u) * 28); }
+.face .cover-lotus { width: calc(var(--u) * 46); }
+.face .cover-star { font-size: calc(var(--u) * 18); }
+.face .cover-initials { font-size: calc(var(--u) * 20); margin-top: calc(var(--u) * 4); }
+.face .cover-title { font-size: calc(var(--u) * 5); }
+.face .cover-hint { margin-top: calc(var(--u) * 10); padding: calc(var(--u) * 2.4) calc(var(--u) * 6); font-size: max(11px, calc(var(--u) * 3.6)); }
