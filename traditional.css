@@ -11,15 +11,15 @@ body.traditional { --night: #333d30; --plum: #46533f; --wine: #7d2e34; --gold: #
 body.traditional nav { background: rgba(51, 61, 48, .96); }
 
 .invite-card { max-width: 600px; margin: 0 auto; padding: 78px 14px 36px; text-align: center; }
-.template { position: relative; aspect-ratio: 1031 / 1830; container-type: inline-size; background: url("images/invite-art.jpg?v=26") center / cover; box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
+.template { position: relative; aspect-ratio: 1031 / 1830; container-type: inline-size; background: url("images/invite-art.jpg?v=29") center / cover; box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
   color: #fff8e4; text-shadow: 0 1px 3px rgba(24, 36, 18, .75); font-variant-numeric: lining-nums; }
 
 /* top line sits between the two corner lotuses */
 .invite-top { position: absolute; top: 6cqw; left: 18.5cqw; width: 65cqw; white-space: nowrap; }
 .om { font: 500 5.18cqw/1.5 "Noto Serif Devanagari", serif; color: #f6dfa2; }
 
-/* the rest keeps to the open side, clear of the stems, elephant and lower lotuses */
-.invite-words { position: absolute; top: 24.5cqw; height: 117cqw; left: 36cqw; right: 3cqw; display: flex; flex-direction: column; justify-content: center; gap: 3.46cqw;
+/* the rest is centred, between the flower sprig and the lower lotuses */
+.invite-words { position: absolute; top: 22cqw; height: 119cqw; left: 18cqw; right: 18cqw; display: flex; flex-direction: column; justify-content: center; gap: 3.46cqw;
   font: 600 4.32cqw/1.32 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
 .request { font-style: italic; padding: 0 2cqw; }
 .invite-words h1, .invite-words h2 { font: 400 12.96cqw/1.15 "Great Vibes", cursive; color: #ffe8ac; margin: 0; white-space: nowrap; }
