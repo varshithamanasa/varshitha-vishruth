@@ -29,6 +29,19 @@ body.traditional nav { background: rgba(51, 61, 48, .96); }
 
 .invite-card .button { margin-top: 28px; }
 body.traditional .button { background: var(--wine); color: #fff3cd; border: 1px solid var(--gold); }
-body.traditional .rsvp .button { background: var(--gold); color: #2d3629; }
-body.traditional .events { --ink: #33291f; }
-body.traditional .card { border: 4px double var(--gold-deep); }
+/* Events, RSVP and footer in the template's colours: sage texture, cream, gold and lotus maroon.
+   sage.jpg is a plain patch cut from the template, so the green is the same. */
+body.traditional .events { background: url("images/sage.jpg") center / cover; color: #fff8e4; text-shadow: 0 1px 3px rgba(24, 36, 18, .7); }
+body.traditional .events .eyebrow { color: #f6dfa2; }
+body.traditional .events h2 { color: #ffe8ac; font: 400 clamp(46px, 9vw, 64px)/1.2 "Great Vibes", cursive; }
+body.traditional .card { background: rgba(48, 62, 40, .55); border: 1px solid var(--gold); outline: 1px solid rgba(227, 194, 122, .6); outline-offset: -9px; box-shadow: 0 18px 36px rgba(24, 36, 18, .3); }
+body.traditional .day strong, body.traditional .card h3, body.traditional .card b { color: #ffe8ac; }
+body.traditional .day span { color: #f6dfa2; }
+body.traditional .card ul { border-color: rgba(227, 194, 122, .5); }
+body.traditional .links a { background: var(--wine); border-color: var(--gold); color: #fff3cd; text-shadow: none; }
+body.traditional .links a:hover { background: #983c43; }
+body.traditional .rsvp { background: var(--night); }
+body.traditional .rsvp .eyebrow { color: var(--gold); }
+body.traditional .rsvp h2 { color: #ffe8ac; }
+body.traditional .rsvp .button { background: var(--wine); color: #fff3cd; }
+body.traditional footer .script { color: #ffe8ac; }
