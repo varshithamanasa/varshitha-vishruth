@@ -21,7 +21,7 @@ body.traditional nav { background: rgba(51, 61, 48, .96); }
 /* the rest is centred, between the flower sprig and the lower lotuses */
 .invite-words { position: absolute; top: 22cqw; height: 119cqw; left: 18cqw; right: 18cqw; display: flex; flex-direction: column; justify-content: center; gap: 3.46cqw;
   font: 600 4.32cqw/1.32 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
-.request { font-style: italic; padding: 0 2cqw; }
+.request { font-style: italic; padding: 0 2cqw; position: relative; top: -4.5cqw; }
 .invite-words h1, .invite-words h2 { font: 400 12.96cqw/1.15 "Great Vibes", cursive; color: #ffe8ac; margin: 0; white-space: nowrap; }
 .invite-words .amp { font: 400 5.94cqw/.9 "Great Vibes", cursive; color: #ffe8ac; }
 .date { text-transform: uppercase; letter-spacing: .18em; font-size: 3.78cqw; margin-top: 3.24cqw; }
