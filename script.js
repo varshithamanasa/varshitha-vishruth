@@ -1,20 +1,3 @@
-// Muhurtam: February 11, 2027, 11:00 AM Central Standard Time
-const muhurtam = new Date("2027-02-11T11:00:00-06:00");
-
-function updateCountdown() {
-  const left = muhurtam - Date.now();
-  if (left <= 0) {
-    document.getElementById("countdown").hidden = true;
-    return;
-  }
-  const mins = Math.floor(left / 60000);
-  document.getElementById("cd-days").textContent = Math.floor(mins / 1440);
-  document.getElementById("cd-hours").textContent = Math.floor(mins / 60) % 24;
-  document.getElementById("cd-mins").textContent = mins % 60;
-}
-updateCountdown();
-setInterval(updateCountdown, 30000);
-
 if (RSVP_FORM_URL) {
   const button = document.getElementById("rsvp-button");
   button.href = RSVP_FORM_URL;
@@ -43,6 +26,11 @@ themeSwitch.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "instant" });
 });
 
-// The invitation starts closed; tapping the cover swings it open.
-const cover = document.getElementById("cover");
-cover.addEventListener("click", () => cover.parentElement.classList.add("open"));
+// Each invitation starts closed; tapping its cover swings it open.
+document.querySelectorAll(".cover").forEach((cover) => {
+  cover.addEventListener("click", () => cover.parentElement.classList.add("open"));
+});
+// Switching looks closes the cards again, so the opening can be seen each time.
+themeSwitch.addEventListener("click", () => {
+  document.querySelectorAll(".book").forEach((book) => book.classList.remove("open"));
+});

@@ -11,7 +11,7 @@ body.traditional { --night: #333d30; --plum: #46533f; --wine: #7d2e34; --gold: #
 body.traditional nav { background: rgba(51, 61, 48, .96); }
 
 .invite-card { max-width: 600px; margin: 0 auto; padding: 78px 14px 36px; text-align: center; }
-.template { position: relative; aspect-ratio: 1031 / 1830; container-type: inline-size; background: url("images/invite-art.jpg") center / cover; box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
+.template { position: relative; aspect-ratio: 1031 / 1830; container-type: inline-size; background: url("images/invite-art.jpg?v=26") center / cover; box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
   color: #fff8e4; text-shadow: 0 1px 3px rgba(24, 36, 18, .75); font-variant-numeric: lining-nums; }
 
 /* top line sits between the two corner lotuses */
@@ -76,3 +76,22 @@ body.traditional footer .script { color: #ffe8ac; }
   .book.open .door { transform: none; opacity: 0; }
   .face .cover-hint { animation: none; }
 }
+
+/* Western look: the same opening card in plum and gold; the photo appears as the cover opens */
+body:not(.traditional) .invite-card { padding-top: 78px; }
+.west-card { padding: 6cqw 6cqw 9cqw; background: radial-gradient(ellipse at 50% 35%, #3a1a2a, #1d0d15 75%); border: 2px solid var(--gold);
+  outline: 1px solid var(--gold); outline-offset: -3cqw; box-shadow: 0 14px 36px rgba(0, 0, 0, .45); color: #f7efe1; }
+.reveal { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 999px 999px 6px 6px; border: 1px solid var(--gold);
+  opacity: 0; transform: scale(.9); transition: opacity 1.4s ease, transform 1.8s ease; }
+.book.open .reveal { opacity: 1; transform: none; transition-delay: .7s; }
+.west-words { font: 600 4.3cqw/1.4 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
+.west-words .eyebrow { font: 600 3.1cqw Mulish, system-ui, sans-serif; margin: 6cqw 0 3cqw; color: var(--gold); }
+.west-words .request { font-style: italic; }
+.west-words h1, .west-words h2 { font: 400 15cqw/1.2 "Great Vibes", cursive; color: #ffe8ac; margin: 1cqw 0 0; }
+.west-words .amp { font: 400 8cqw/1.2 "Great Vibes", cursive; color: var(--gold); margin-top: 2cqw; }
+.west-words .date { margin-top: 6cqw; text-transform: uppercase; letter-spacing: .18em; font-size: 3.8cqw; }
+body:not(.traditional) .invite-card .button { background: var(--gold); color: var(--night); border: 0; }
+.west-only .face { background: radial-gradient(ellipse at 50% 40%, #4a2033, #1d0d15 80%); }
+.face .cover-star { font-size: 18cqw; line-height: 1.4; color: var(--gold); }
+.west-only .face .cover-hint { background: var(--gold); color: #1d0d15; }
+@media (prefers-reduced-motion: reduce) { .reveal { transform: none; transition: opacity .3s; } .book.open .reveal { transition-delay: 0s; } }
