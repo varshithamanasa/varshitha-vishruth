@@ -64,8 +64,8 @@ document.addEventListener("touchmove", (event) => {
   if (isLocked() && event.touches.length === 1) event.preventDefault();
 }, { passive: false });
 
-// Countdown to the muhurtham: February 11, 2027, 11:00 AM Central Standard Time
-const muhurtham = new Date("2027-02-11T11:00:00-06:00");
+// Countdown to the muhurtham: February 11, 2027, 11:10 AM Central Standard Time
+const muhurtham = new Date("2027-02-11T11:10:00-06:00");
 
 function updateCountdown() {
   const left = muhurtham - Date.now();
